@@ -1,17 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+
+  const [left, setLeft] = useState(0)
+  const [rigth, setRigth] = useState(0)
+
+
+  return (
+    <>
+      {left}
+      <button onClick={() => setLeft(left + 1)}>left</button>
+
+      <button onClick={() => setRigth(left + 1)}>rigth</button>
+      {rigth}
+    </>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root')
+)
