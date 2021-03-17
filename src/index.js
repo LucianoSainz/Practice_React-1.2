@@ -4,16 +4,16 @@ import ReactDOM from 'react-dom';
 const History = (props) =>{
   if(props.allClicks.length === 0){
     return(
-      <>
+      <div>
       the app is used by pressing the buttons
-      </>
+      </div>
     )
   }
 
   return(
-    <>
+    <div>
     button press history: {props.allClicks.join(' ')}
-    </>
+    </div>
   )
 }
 
@@ -35,16 +35,17 @@ const App = () => {
 
   const handleRigthClick = () => {
     setAll(allClicks.concat('R'))
-    setAll(rigth + 1)
+    setRigth(rigth + 1)
   }
 
   return (
     <>
       {left}
-      <button onClick={() => setLeft(left + 1)}>left</button>
+      <Button onClick={handleLeftClick} text='left'/>
 
-      <button onClick={() => setRigth(left + 1)}>rigth</button>
+      <Button onClick={handleRigthClick} text='rigth' />
       {rigth}
+      <History allClicks={allClicks} />
     </>
   );
 }
