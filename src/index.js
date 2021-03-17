@@ -9,12 +9,23 @@ const History = (props) =>{
       </>
     )
   }
+
+  return(
+    <>
+    button press history: {props.allClicks.join(' ')}
+    </>
+  )
 }
+
+const Button = ({onClick, text}) => (
+  <button onClick={onClick}>{text}</button>
+)
 
 const App = () => {
 
   const [left, setLeft] = useState(0)
   const [rigth, setRigth] = useState(0)
+  const [allClicks, setAll] = useState([])
 
 
   return (
