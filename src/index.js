@@ -1,6 +1,15 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
+const History = (props) =>{
+  if(props.allClicks.length === 0){
+    return(
+      <>
+      the app is used by pressing the buttons
+      </>
+    )
+  }
+}
 
 const App = () => {
 
