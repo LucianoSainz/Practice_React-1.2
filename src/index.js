@@ -28,6 +28,16 @@ const App = () => {
   const [allClicks, setAll] = useState([])
 
 
+  const handleLeftClick = () => {
+    setAll(allClicks.concat('L'))
+    setLeft(left + 1)
+  }
+
+  const handleRigthClick = () => {
+    setAll(allClicks.concat('R'))
+    setAll(rigth + 1)
+  }
+
   return (
     <>
       {left}
